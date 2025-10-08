@@ -1,8 +1,24 @@
-const { Schema } = require("mongoose")
+const {DataTypes} = require ("sequelize")
+const sequelize = require("../middleware/dbConnection")
 
-const candidatShema = new mongoose.Schema({
-  id_candidat : {type:String,required:true},
-  code_candidat : {type:String,required:true},
+
+const User = sequelize.define("User",{
+  id_User  : {
+    type : DataTypes.STRING,
+    allowNull:false,
+    primaryKey : true,
+    autoIncrement:true
+  },
+  nom_user : {
+    type:DataTypes.STRING,
+    allowNull:false,
+
+  },
+  sexe_user : {
+    type : DataTypes.STRING,
+    allowNull:false,
+    defaultValue : "Homme"
+  }
 })
 
-module.exports = {candidatShema}
+module.exports = User
