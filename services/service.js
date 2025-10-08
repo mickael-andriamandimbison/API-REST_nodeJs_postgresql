@@ -7,7 +7,7 @@ async function getAllUser() {
     return users
 }
 
-async function GetUserById(id) {
+async function getUserById(id) {
     const user = await User.findOne({where : {id_user:id}})
 
     if(!user){
@@ -51,4 +51,4 @@ async function updateUser(id,data) {
     return user
 }
 
-module.exports = {updateUser,getAllUser,GetUserById,addUser,deleteUser}
+module.exports = {updateUser,getAllUser,getUserById,addUser,deleteUser}
