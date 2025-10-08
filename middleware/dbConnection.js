@@ -3,7 +3,7 @@ const {Sequelize} = require("sequelize")
 const sequelize = process.env.DATABASE_URL 
   ? new Sequelize(process.env.DATABASE_URL, {
       dialect: "postgres",
-      logging: false, // Désactiver les logs SQL en développement
+      logging: false
     })
   : new Sequelize(
       process.env.DB_NAME,
